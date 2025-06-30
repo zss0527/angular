@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
   http = inject(HttpClient)
-  baseurl = 'http://localhost:3000/product'
+  baseurl = 'http://localhost:8080/product'
   constructor() { }
 
   getAll() {

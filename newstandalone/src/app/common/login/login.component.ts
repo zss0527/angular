@@ -29,20 +29,23 @@ export class LoginComponent implements OnInit {
   }
   ProceedLoign(form: any) {
     if (form.valid) {
-      this.masterService.proceedlogin(this._logindata).subscribe({
-        next: (item) => {
-          let resp = item
-          if (resp.length > 0) {
-            localStorage.setItem('username', this._logindata.username)
-            this.router.navigateByUrl('/home')
-          } else {
-            alert('Invalid credentials!')
-          }
-        },
-        error: () => {
+      // this.masterService.proceedlogin(this._logindata).subscribe({
+      //   next: (item) => {
+      //     let resp = item
+      //     if (resp.length > 0) {
+      //       localStorage.setItem('username', this._logindata.username)
+      //       this.router.navigateByUrl('/home')
+      //     } else {
+      //       alert('Invalid credentials!')
+      //     }
+      //   },
+      //   error: () => {
 
-        }
-      })
+      //   }
+      // })
+      console.log("ready navigate to /home")
+      localStorage.setItem('username', this._logindata.username)
+      this.router.navigateByUrl('/home')
     }
 
   }
